@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   KeyboardAvoidingView as RNKeyboardAvoidingView,
+  StatusBar,
   Text,
   TextInput,
   TouchableOpacity,
@@ -25,6 +26,7 @@ export default function KeyboardAvoidingViewExample({ navigation }: Props) {
 
   useEffect(() => {
     navigation.setOptions({
+      headerShown: false,
       headerRight: () => (
         <View style={styles.row}>
           <Text
@@ -54,12 +56,8 @@ export default function KeyboardAvoidingViewExample({ navigation }: Props) {
     : RNKeyboardAvoidingView;
 
   return (
-    <Container
-      behavior={behavior}
-      contentContainerStyle={styles.container}
-      keyboardVerticalOffset={100}
-      style={styles.content}
-    >
+    <Container behavior="padding" style={{ backgroundColor: "red", flex: 1 }}>
+      <StatusBar translucent backgroundColor="transparent" />
       <View style={styles.inner}>
         <Text style={styles.heading}>Header</Text>
         <View>

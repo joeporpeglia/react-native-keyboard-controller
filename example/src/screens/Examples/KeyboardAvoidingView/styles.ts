@@ -13,7 +13,6 @@ export default StyleSheet.create({
   },
   content: {
     flex: 1,
-    maxHeight: 600,
   },
   heading: {
     color: "black",
